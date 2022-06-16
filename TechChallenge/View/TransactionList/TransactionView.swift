@@ -15,9 +15,13 @@ struct TransactionView: View {
     var body: some View {
         VStack {
             HStack {
-                Text(transaction.category.rawValue)
-                    .font(.headline)
-                    .foregroundColor(transaction.category.color)
+                Text(transaction.category.rawValue).textCase(.uppercase)
+                    .font(.caption)
+                    .foregroundColor(.white)
+                    .padding(.horizontal, 8)
+                    .padding(.vertical, 4)
+                    .background(transaction.category.color)
+                    .mask(RoundedRectangle(cornerRadius: 16))
                 Spacer()
                 
                 if transaction.isPinned {
@@ -37,11 +41,15 @@ struct TransactionView: View {
                             height: 60.0,
                             alignment: .top
                         )
+                        .clipShape(Circle())
                     
-                    VStack(alignment: .leading) {
+                    VStack(alignment: .leading, spacing: 4) {
                         Text(transaction.name)
                             .secondary()
                         Text(transaction.accountName)
+                            .tertiary()
+                        
+                        Text(transaction.date.formatted)
                             .tertiary()
                     }
                     
@@ -51,15 +59,15 @@ struct TransactionView: View {
                         Text("$\(transaction.amount.formatted())")
                             .bold()
                             .secondary()
-                        Text(transaction.date.formatted)
-                            .tertiary()
+                       
                     }
                 }
             }
         }
         .padding(8.0)
-        .background(Color.accentColor.opacity(0.1))
-        .clipShape(RoundedRectangle(cornerRadius: 8.0))
+        .background(Color.white)
+        .clipShape(RoundedRectangle(cornerRadius: 20.0, style: .continuous))
+        .shadow(color: Color.primary.opacity(0.2), radius: 10, x: 0, y: 5)
         .onTapGesture {
             transactionVM.pinTransactionWith(id: transaction.id)
         }

@@ -16,16 +16,16 @@ struct TransactionCategoryView: View {
         ScrollView(.horizontal) {
             HStack {
                 
-                TransactionCategoryButton(category: nil)
+                TransactionCategoryButton(category: nil, selectedCategory: $transactionViewModel.transactionSelectedCategory)
                 
                 ForEach(TransactionModel.Category.allCases, id: \.id){
                     category in
-                    TransactionCategoryButton(category: category)
+                    TransactionCategoryButton(category: category, selectedCategory: $transactionViewModel.transactionSelectedCategory)
                 }
             }
             .padding(.vertical, 16)
             .padding(.horizontal, 8)
-            .background(Color.accentColor.opacity(0.8))
+            .background(Color.accentColor.opacity(0.1))
         }
     }
 }
