@@ -18,10 +18,9 @@ struct TransactionCategoryButton: View {
     var body: some View {
         Button {
             transitionVM.updateCategory(with: category)
-            selectedCategory = category
         } label: {
             
-            if transitionVM.transactionSelectedCategory == category {
+            if selectedCategory == category {
                 Text(category?.rawValue ?? "all")
                     .fontWeight(.bold)
                     .font(.title2)
