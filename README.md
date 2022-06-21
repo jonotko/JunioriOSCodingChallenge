@@ -1,23 +1,32 @@
-# iOS Junior Tech Challenge - Take Home Challenge
+# Jonathan Agarrat - iOS Junior Tech Challenge - Take Home Challenge
 
-Thank you for your interest in taking the iOS Tech Challenge.
+## Branches 
+- ### main 
+  Contains the first submitted code 
 
-## Preparation 
-Please, compile the project in Xcode and run it in your simulator of choice. You will find a working app prototype with 2 screens, accessible via the tab bar. This is the starting point for the challenge.
+	![tech_challenge_images 012](./img/tech_challenge_images.012.png)
+	![tech_challenge_images 013](./img/tech_challenge_images.013.png)
 
-![tech_challenge_images 001](./img/tech_challenge_images.001.png)
+- ### just-for-fun
+  Conatins a redesigned app
 
+	![tech_challenge_images 008](./img/tech_challenge_images.008.png)
+	![tech_challenge_images 009](./img/tech_challenge_images.009.png)
+	
+- ### senior-attempt
+  Conatins the rings view from the senior challenge
 
-Back in the project, locate the file `TransactionModel.swift` and have a look at the data model driving the app, the `TransactionModel`. Some sample transactions can be found in `ModelData.swift`. These are used to populate the list of transactions you have just seen.
+	![tech_challenge_images 008](./img/tech_challenge_images.010.png)
+	![tech_challenge_images 009](./img/tech_challenge_images.011.png)
 
-## Assignments
+## Assignments 
 
 General points to consider:
 - follow the specs carefully
 - focus on writing clean, maintainable code
 - write your UI code in SwiftUI, not UIKit
 
-### 1. Filtering buttons
+### 1. Filtering buttons ✅
 
 Add a horizontally scrolling view with buttons for the different categories (shopping, entertainment, food, etc). When the user taps on each of these, the list below should show only the transactions for the selected category. Add a button for all categories as well.
 
@@ -30,7 +39,7 @@ Here are the design specs for the scrolling list of buttons and the buttons them
 ![](./img/tech_challenge_images.002.png)
 
 
-### 2. Floating sum view 
+### 2. Floating sum view    ✅
 
 Add a floating view at the bottom of the list displaying the sum for the transactions belonging to the selected category. The sum should update when the user chooses the different categories.
 
@@ -43,7 +52,7 @@ Here are the design specs for the floating view with the sum of the chosen trans
 ![tech_challenge_images 003](./img/tech_challenge_images.003.png)
 
 
-### 3. Add a pin/unpin action to each transaction
+### 3. Add a pin/unpin action to each transaction    ✅
 
 By tapping on it, the UI should blend/unblend accordingly. The sum in the floating view at the bottom should only consider pinned transactions.
 
@@ -56,7 +65,7 @@ Here are the design specs for the unpinned transaction view and the pin/unpin ic
 
 ![tech_challenge_images 005](./img/tech_challenge_images.005.png)
 
-### 4. Update the list in the insights tab to reflect expense in each category
+### 4. Update the list in the insights tab to reflect expense in each category  ✅
 
 The insights view should only consider pinned transactions.
 
@@ -67,7 +76,7 @@ Make sure that the state between the transactions and the insights tab is kept c
 
 ![](./img/insights_tab_with_pinned_unpinned_views.mp4)
 
-### 5. Unit tests 
+### 5. Unit tests  ✅
 
 Write unit test to verify:
 
