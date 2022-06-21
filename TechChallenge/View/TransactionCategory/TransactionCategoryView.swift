@@ -9,16 +9,13 @@ import SwiftUI
 
 struct TransactionCategoryView: View {
     
-    @EnvironmentObject var transactionViewModel: TransactionViewModel
-
-    
     var body: some View {
         ScrollView(.horizontal) {
             HStack {
                 
                 TransactionCategoryButton(category: nil)
                 
-                ForEach(TransactionModel.Category.allCases, id: \.id){
+                ForEach(TransactionModel.Category.allCases){
                     category in
                     TransactionCategoryButton(category: category)
                 }
@@ -33,6 +30,5 @@ struct TransactionCategoryView: View {
 struct TransactionCategoryView_Previews: PreviewProvider {
     static var previews: some View {
         TransactionCategoryView()
-            .environmentObject(TransactionViewModel())
     }
 }

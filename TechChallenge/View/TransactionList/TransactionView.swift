@@ -10,6 +10,7 @@ import SwiftUI
 struct TransactionView: View {
     
     @EnvironmentObject var transactionVM: TransactionViewModel
+    
     let transaction: TransactionModel
     
     var body: some View {

@@ -16,6 +16,7 @@ struct TransactionCategoryButton: View {
     var body: some View {
         Button {
             transitionVM.updateCategory(with: category)
+            transitionVM.updateSum(with: category)
         } label: {
             Text(category?.rawValue ?? "all")
                 .fontWeight(.bold)

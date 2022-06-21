@@ -21,7 +21,7 @@ struct InsightsView: View {
                         .foregroundColor(category.color)
                     Spacer()
                     // TODO: calculate cummulative expense for each category
-                    Text("$\(sum)")
+                    Text("$\(sum.formatted())")
                         .bold()
                         .secondary()
                 }

@@ -29,7 +29,7 @@ struct TransactionListView: View {
                 .navigationTitle("Transactions")
             }
             .padding(.bottom, 100)
-            TransactionSumView(category: transactionVM.transactionSelectedCategory)
+            TransactionSumView(category: transactionVM.transactionSelectedCategory, transactionSum: transactionVM.transactionsTotal)
         }
     }
 }

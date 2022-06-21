@@ -9,18 +9,18 @@ import SwiftUI
 
 struct TransactionSumView: View {
     
-    @EnvironmentObject var transactionVM: TransactionViewModel
-    
     let category: TransactionModel.Category?
+    
+    let transactionSum: Double
     
     var body: some View {
         
         VStack {
             HStack {
                 Spacer()
-                Text(transactionVM.transactionSelectedCategory?.rawValue ?? "all")
+                Text(category?.rawValue ?? "all")
                     .font(.headline)
-                    .foregroundColor(transactionVM.transactionSelectedCategory?.color ?? Color.black)
+                    .foregroundColor(category?.color ?? Color.black)
             }
             HStack{
                 Text("Total Spent")
@@ -29,7 +29,7 @@ struct TransactionSumView: View {
                 
                 Spacer()
                 
-                Text("$\(transactionVM.sumTransactions(with: category))")
+                Text("$\(transactionSum.formatted())")
                     .fontWeight(.bold)
                     .secondary()
             }
@@ -48,7 +48,6 @@ struct TransactionSumView: View {
 
 struct TransactionSumView_Previews: PreviewProvider {
     static var previews: some View {
-        TransactionSumView(category: nil)
-            .environmentObject(TransactionViewModel())
+        TransactionSumView(category: nil, transactionSum: 0.0)
     }
 }

@@ -13,9 +13,13 @@ class TransactionViewModel: ObservableObject {
     
     @Published var transactions: [TransactionModel]
     
+    @Published var transactionsTotal: Double = 0.0
+    
     
     init(transactions: [TransactionModel] = ModelData.sampleTransactions){
         self.transactions = transactions
+        transactionsTotal = sumTransactions(with: nil)
+        
     }
     
     func getTransactionsFor(category: TransactionModel.Category?) -> [TransactionModel]{
@@ -31,6 +35,11 @@ class TransactionViewModel: ObservableObject {
     
     func updateCategory(with category: TransactionModel.Category? = nil) {
         transactionSelectedCategory = category
+        
+    }
+    
+    func updateSum(with category: TransactionModel.Category? = nil){
+        transactionsTotal = sumTransactions(with: category)
     }
     
     func pinTransactionWith(id: Int){
@@ -39,9 +48,11 @@ class TransactionViewModel: ObservableObject {
                 transactions[index].isPinned.toggle()
             }
         }
+        
+        updateSum(with: transactionSelectedCategory)
     }
     
-    func sumTransactions(with category: TransactionModel.Category?) -> String {
+    func sumTransactions(with category: TransactionModel.Category?) -> Double {
         var sum: Double = 0
         
         if let category = category {
@@ -56,11 +67,7 @@ class TransactionViewModel: ObservableObject {
                 sum += transaction.isPinned ? transaction.amount : 0
             }
         }
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        formatter.maximumFractionDigits = 2
-        formatter.minimumFractionDigits = 2
         
-        return  formatter.string(from: NSNumber(value: sum)) ?? ""
+        return  sum
     }
 }
