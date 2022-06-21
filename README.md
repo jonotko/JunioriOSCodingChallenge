@@ -1,6 +1,19 @@
-# iOS Junior Tech Challenge - Take Home Challenge
+# iOS Junior Tech Challenge - Take Home Challenge (Jonathan Agarrat)
 
-Thank you for your interest in taking the iOS Tech Challenge.
+Thank you for reviewing my iOS Tech Challenge Submission.
+
+## Branches 
+- ### main 
+  Contains the first submitted code 
+
+
+- ### just-for-fun
+  Conatins a redesigned app
+
+	
+- ### senior-attempt
+  Conatins the rings view from the senior challenge
+
 
 ## Preparation 
 Please, compile the project in Xcode and run it in your simulator of choice. You will find a working app prototype with 2 screens, accessible via the tab bar. This is the starting point for the challenge.
