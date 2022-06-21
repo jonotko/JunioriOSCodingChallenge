@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TransactionCategoryView: View {
     
-    @EnvironmentObject var transactionViewModel: TransactionViewModel
+    //@EnvironmentObject var transactionViewModel: TransactionViewModel
 
     
     var body: some View {
@@ -33,6 +33,6 @@ struct TransactionCategoryView: View {
 struct TransactionCategoryView_Previews: PreviewProvider {
     static var previews: some View {
         TransactionCategoryView()
-            .environmentObject(TransactionViewModel())
+            //.environmentObject(TransactionViewModel())
     }
 }

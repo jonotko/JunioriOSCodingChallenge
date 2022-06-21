@@ -13,6 +13,8 @@ struct InsightsView: View {
     
     var body: some View {
         List {
+            RingView()
+                .scaledToFit()
             ForEach(TransactionModel.Category.allCases) { category in
                 let sum = transactionVM.sumTransactions(with: category)
                 HStack {

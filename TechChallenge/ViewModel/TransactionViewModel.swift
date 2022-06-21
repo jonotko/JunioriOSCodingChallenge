@@ -61,6 +61,6 @@ class TransactionViewModel: ObservableObject {
         formatter.maximumFractionDigits = 2
         formatter.minimumFractionDigits = 2
         
-        return  formatter.string(from: NSNumber(value: sum)) ?? ""
+        return  formatter.string(from: NSNumber(value: sum)) ?? "0"
     }
 }

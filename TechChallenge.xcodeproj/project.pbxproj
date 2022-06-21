@@ -28,6 +28,7 @@
 		AB84430F285A449600EF0A76 /* TransactionCategoryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB84430E285A449600EF0A76 /* TransactionCategoryButton.swift */; };
 		AB844312285A521C00EF0A76 /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB844311285A521C00EF0A76 /* TransactionViewModel.swift */; };
 		AB844314285AA36F00EF0A76 /* TransactionSumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB844313285AA36F00EF0A76 /* TransactionSumView.swift */; };
+		ABD7F29E2861498A00E46253 /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD7F29D2861498A00E46253 /* RingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		AB84430E285A449600EF0A76 /* TransactionCategoryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategoryButton.swift; sourceTree = "<group>"; };
 		AB844311285A521C00EF0A76 /* TransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewModel.swift; sourceTree = "<group>"; };
 		AB844313285AA36F00EF0A76 /* TransactionSumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionSumView.swift; sourceTree = "<group>"; };
+		ABD7F29D2861498A00E46253 /* RingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 		3CE226CB26B2E44E00B3D085 /* Insights */ = {
 			isa = PBXGroup;
 			children = (
+				ABD7F29D2861498A00E46253 /* RingView.swift */,
 				3CE226C626B2E41E00B3D085 /* InsightsView.swift */,
 			);
 			path = Insights;
@@ -333,6 +336,7 @@
 				3C3FCAAD26C57A7D0092AB11 /* TransactionModel+UI.swift in Sources */,
 				AB844314285AA36F00EF0A76 /* TransactionSumView.swift in Sources */,
 				3CE226B526B0523C00B3D085 /* TransactionListView.swift in Sources */,
+				ABD7F29E2861498A00E46253 /* RingView.swift in Sources */,
 				3CE226B126B03DC600B3D085 /* ModelData.swift in Sources */,
 				3CE2268426B007D200B3D085 /* TechChallengeApp.swift in Sources */,
 				3C296ED126B404A5006DF667 /* Path.swift in Sources */,
