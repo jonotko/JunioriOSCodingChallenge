@@ -13,6 +13,13 @@ Thank you for reviewing my iOS Tech Challenge Submission.
 	
 - ### senior-attempt
   Conatins the rings view from the senior challenge
+  
+## Tasks Completed
+1. Filtering buttons ✅
+2. Floating sum view ✅
+3. Add a pin/unpin action to each transaction ✅
+4. Update the list in the insights tab to reflect expense in each category ✅
+5. Unit tests ✅
 
 
 ## Preparation 
