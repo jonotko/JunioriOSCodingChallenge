@@ -22,10 +22,11 @@ class TechChallengeTests: XCTestCase {
 
     func testTransactionFilterAll() throws {
         // When (category starts as nil for all transaction)
-        let filteredTransaction = transactionViewModel.getTransactionsFor(category: nil)
+        let transactions = transactionViewModel.transactions
+        let filteredTransaction = transactionViewModel.getTransactionsFor(category: .all)
 
         // Then
-        XCTAssertEqual(filteredTransaction.count, 13)
+        XCTAssertEqual(filteredTransaction.count, transactions.count)
 
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
@@ -34,16 +35,18 @@ class TechChallengeTests: XCTestCase {
     func testTransactionFilterFood() throws {
 
         // When
-        let filteredTransaction = transactionViewModel.getTransactionsFor(category: TransactionModel.Category.food)
+        let foodTransactions = transactionViewModel.transactions.filter({ $0.category == .food})
+        
+        let filteredTransaction = transactionViewModel.getTransactionsFor(category: .food)
 
         // Then
-        XCTAssertEqual(filteredTransaction.count, 5)
+        XCTAssertEqual(filteredTransaction.count, foodTransactions.count)
     }
     
     func testTransactionFilterHealth() throws {
 
         // When
-        let filteredTransaction = transactionViewModel.getTransactionsFor(category: TransactionModel.Category.health)
+        let filteredTransaction = transactionViewModel.getTransactionsFor(category: .health)
 
         // Then
         XCTAssertEqual(filteredTransaction.count, 1)
@@ -52,7 +55,7 @@ class TechChallengeTests: XCTestCase {
     func testTransactionFilterEntertainment() throws {
 
         // When
-        let filteredTransaction = transactionViewModel.getTransactionsFor(category: TransactionModel.Category.entertainment)
+        let filteredTransaction = transactionViewModel.getTransactionsFor(category: .entertainment)
 
         // Then
         XCTAssertEqual(filteredTransaction.count, 1)
@@ -61,7 +64,7 @@ class TechChallengeTests: XCTestCase {
     func testTransactionFilterShopping() throws {
 
         // When
-        let filteredTransaction = transactionViewModel.getTransactionsFor(category: TransactionModel.Category.shopping)
+        let filteredTransaction = transactionViewModel.getTransactionsFor(category: .shopping)
 
         // Then
         XCTAssertEqual(filteredTransaction.count, 3)
@@ -71,7 +74,7 @@ class TechChallengeTests: XCTestCase {
     func testTransactionFilterTravel() throws {
 
         // When
-        let filteredTransaction = transactionViewModel.getTransactionsFor(category: TransactionModel.Category.travel)
+        let filteredTransaction = transactionViewModel.getTransactionsFor(category: .travel)
 
         // Then
         XCTAssertEqual(filteredTransaction.count, 3)
@@ -81,50 +84,50 @@ class TechChallengeTests: XCTestCase {
     func testTransactionSumForCategoryAll() throws{
         
         // When
-        let sum: String = transactionViewModel.sumTransactions(with: nil)
+        let sum: Double = transactionViewModel.sumTransactions(with: .all)
         
-        XCTAssertEqual(sum, "472.08")
+        XCTAssertEqual(sum.formatted(), "472.08")
     }
     
     
     func testTransactionSumForCategoryFood() throws{
         
         // When
-        let sum: String = transactionViewModel.sumTransactions(with: .food)
+        let sum: Double = transactionViewModel.sumTransactions(with: .food)
         
-        XCTAssertEqual(sum, "74.28")
+        XCTAssertEqual(sum.formatted(), "74.28")
     }
     
     func testTransactionSumForCategoryHealth() throws{
         
         // When
-        let sum: String = transactionViewModel.sumTransactions(with: .health)
+        let sum: Double = transactionViewModel.sumTransactions(with: .health)
         
-        XCTAssertEqual(sum, "21.53")
+        XCTAssertEqual(sum.formatted(), "21.53")
     }
     
     func testTransactionSumForCategoryEntertainment() throws{
         
         // When
-        let sum: String = transactionViewModel.sumTransactions(with: .entertainment)
+        let sum: Double = transactionViewModel.sumTransactions(with: .entertainment)
         
-        XCTAssertEqual(sum, "82.99")
+        XCTAssertEqual(sum.formatted(), "82.99")
     }
     
     func testTransactionSumForCategoryShopping() throws{
     
         // When
-        let sum: String = transactionViewModel.sumTransactions(with: .shopping)
+        let sum: Double = transactionViewModel.sumTransactions(with: .shopping)
         
-        XCTAssertEqual(sum, "78.00")
+        XCTAssertEqual(sum.formatted(), "78.00")
     }
     
     func testTransactionSumForCategoryTravel() throws{
         
         // When
-        let sum: String = transactionViewModel.sumTransactions(with: .travel)
+        let sum: Double = transactionViewModel.sumTransactions(with: .travel)
         
-        XCTAssertEqual(sum, "215.28")
+        XCTAssertEqual(sum.formatted(), "215.28")
     }
     
 

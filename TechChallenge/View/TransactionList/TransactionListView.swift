@@ -18,8 +18,8 @@ struct TransactionListView: View {
                 TransactionCategoryView()
                 
                 List {
-                    ForEach(transactionVM
-                        .getTransactionsFor(category: transactionVM.transactionSelectedCategory)) { transaction in
+                    ForEach(transactionVM.filteredTransactions)
+                    { transaction in
                             TransactionView(transaction: transaction)
                         }
                 }

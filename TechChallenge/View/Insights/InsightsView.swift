@@ -13,7 +13,7 @@ struct InsightsView: View {
     
     var body: some View {
         List {
-            ForEach(TransactionModel.Category.allCases) { category in
+            ForEach(TransactionModel.Category.allCases[1...]) { category in
                 let sum = transactionVM.sumTransactions(with: category)
                 HStack {
                     Text(category.rawValue)

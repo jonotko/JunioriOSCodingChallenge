@@ -12,12 +12,8 @@ struct TransactionCategoryView: View {
     var body: some View {
         ScrollView(.horizontal) {
             HStack {
-                
-                TransactionCategoryButton(category: nil)
-                
-                ForEach(TransactionModel.Category.allCases){
-                    category in
-                    TransactionCategoryButton(category: category)
+    
+                ForEach(TransactionModel.Category.allCases){ category in TransactionCategoryButton(category: category)
                 }
             }
             .padding(.vertical, 16)
